@@ -1,4 +1,4 @@
-# Reasoning over Transformer Embeddings for Interpretable Crime News Classification  
+# Reasoning over Transformer Embeddings for Interpretable Crime News Classification
 
 [![Python](https://img.shields.io/badge/Python-3.9%2B-blue.svg)](https://www.python.org/)  
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)  
@@ -8,47 +8,41 @@
 
 ---
 
-This repository contains the implementation and experiments for a research project on **interpretable multi-label classification of Italian criminal news**. The work investigates how transformer-based sentence embeddings, when combined with deep classifiers and semantic reasoning techniques, can improve both **classification accuracy** and **interpretability** in forensic and legal NLP applications.
-
-The project integrates transformer embeddings, CNN-based classifiers, and clustering mechanisms to support rare-label detection and explainability. It demonstrates that high-performing models can also be interpretable and reliable, which is critical in sensitive domains such as law enforcement and justice systems.
+This repository implements and analyzes interpretable multi-label classification of Italian criminal news using transformer embeddings, neural classifiers, and semantic clustering to enhance both accuracy and explainability. Critical for forensic and legal NLP applications, the approach demonstrates how high-performing models can also deliver transparent decision-making.
 
 ---
 
-## Detailed Description  
+## Dataset
 
-1. **Transformer Embeddings**  
-   Uses instruction-tuned multilingual embeddings (`E5-Large`) to capture nuanced semantics across Italian crime reports.  
+This project uses **DICE: a Dataset of Italian Crime Event news**—an annotated corpus of Italian crime news from the province of Modena, spanning 2011 to 2021. DICE includes 10,395 news articles tagged across 13 crime categories, enriched with metadata such as geolocation, event date, and automatic/manual annotations of entities and relations :contentReference[oaicite:1]{index=1}.
 
-2. **Neural Classifiers**  
-   CNN-based multi-label classifiers trained on embeddings to categorize each article into multiple crime types.  
-
-3. **Semantic Clustering**  
-   K-Means clustering enhances interpretability and rare-label detection, offering structured insights for investigators.  
-
-4. **Evaluation Metrics**  
-   - Macro-F1 score for imbalanced datasets  
-   - Paired *t*-tests for statistical validity  
-   - Bootstrapped confidence intervals for robustness  
+Because the dataset is shared under a **CC BY-NC-SA 4.0** license, you can redistribute and adapt it for non-commercial purposes with attribution :contentReference[oaicite:2]{index=2}.
 
 ---
 
-## Dataset  
+## Detailed Description
 
-- **Domain:** Italian criminal news  
-- **Split:** 80% training / 20% testing  
-- **Labels:** Multi-label categories for different crime classes  
-- ⚠️ Dataset is not included due to licensing restrictions — please prepare your own dataset in the same format.  
+This project bridges high-accuracy transformer embeddings with interpretable reasoning, targeting forensic applications where transparency is vital.
+
+- **Transformer Embeddings**: Leverages multilingual instruction-tuned embeddings (e.g., `E5-Large`) to capture nuanced semantics from Italian crime reports.
+- **Neural Classifiers**: CNN-based multi-label models trained atop embeddings to predict multiple crime categories per article.
+- **Semantic Clustering**: K-Means clusters enhance interpretability and rare-label detection, providing structured semantic groupings for legal experts.
+- **Evaluation**: Robust assessment using Macro-F1 (important for imbalanced data), paired *t*-tests for statistical reliability, and bootstrapped confidence intervals.
 
 ---
 
-## Results  
+## Results
 
-- Achieved **Macro-F1 ≈ 74%**  
-- Outperformed baseline classifiers and zero-shot embedding methods  
-- Semantic clustering improved rare-label detection and interpretability  
+- Achieved **Macro-F1 ≈ 74%**, outperforming baseline and zero-shot approaches.
+- Semantic clustering notably improved rare-label detection and interpretability.
+- The framework confirms transformer embeddings serve not only as features but also as foundations for structured, explainable AI.
 
-Outcome: The study confirms that transformer embeddings are not just powerful features but also enable **reasoning and explainable AI** in legal NLP contexts.  
+---
 
+## Repository Structure
 
-## Repository Structure  
-
+├── Reasoning over Transformer Embeddings for Interpretable Crime News Classification.ipynb # Main notebook
+├── data/ # Place DICE dataset here (not included)
+├── models/ # Pre-trained or fine-tuned models
+├── results/ # Experimental outputs and plots
+└── README.md # Project documentation
